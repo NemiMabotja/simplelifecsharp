@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            while(true)
+            {
+                Console.WriteLine("Please input a Number: ");
+                string s = Console.ReadLine();
+                try{
+                    if(string.IsNullOrWhiteSpace(s) || string.IsNullOrEmpty(s)) throw new ArgumentNullException();
+                    int x = int.Parse(s);
+                    Console.WriteLine("{0} is a valid number.", s); 
+                    break;
+                } catch(FormatException e){
+                    Console.WriteLine("{0} is not a valid Number, please try again.", s);
+                } catch(ArgumentNullException){
+                    Console.WriteLine("Please enter a Value: ");
+                }
+            }
+        }
+    }
+    
+   
+}
